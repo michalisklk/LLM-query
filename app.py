@@ -89,10 +89,10 @@ def run_query(sql_query:str):
         for row in rows:
             print("   " + "  ".join(str(item) for item in row))
 
-def call_LLM(client,user_quetion:str):
+def call_LLM(client,user_question:str):
     response=client.models.generate_content(
         model='gemini-2.5-flash',
-        contents=user_quetion,
+        contents=user_question,
         config=types.GenerateContentConfig(
             system_instruction=SYSTEM_PROMPT,
             response_mime_type="application/json",
